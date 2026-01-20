@@ -48,12 +48,12 @@ const Index = () => {
               </div>
             </div>
 
-            <h2 className="font-amiri text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed">
-              Discover the <span className="text-primary">99 Beautiful Names</span> of Allah
+          <h2 className="font-amiri text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed">
+              Discover the <span className="text-primary">33 Beautiful Names</span> of Allah
             </h2>
             
             <p className="text-muted-foreground font-arabic leading-relaxed text-sm md:text-base max-w-2xl mx-auto">
-              The Asma-ul-Husna represent the divine attributes of Allah, each name revealing His infinite mercy, 
+              These selected names of Allah represent His divine attributes, each revealing His infinite mercy, 
               power, wisdom, and perfection. Understanding these names deepens our connection with the Creator 
               and transforms our daily worship and life.
             </p>
@@ -102,8 +102,8 @@ const Index = () => {
           transition={{ delay: 0.4 }}
           className="text-center text-sm text-muted-foreground mb-8"
         >
-          {filteredNames.length === 99 ? (
-            <>Showing all <span className="text-primary font-medium">99</span> names</>
+          {filteredNames.length === 33 ? (
+            <>Showing all <span className="text-primary font-medium">33</span> names</>
           ) : (
             <>Found <span className="text-primary font-medium">{filteredNames.length}</span> name{filteredNames.length !== 1 ? 's' : ''}</>
           )}
