@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MessageCircle, BookOpen } from "lucide-react";
+import { MessageCircle, BookOpen, Users } from "lucide-react";
 
 const Header = () => {
   const location = useLocation();
@@ -21,10 +21,10 @@ const Header = () => {
           >
             <Link to="/" className="inline-block group">
               <h1 className="font-amiri text-3xl md:text-4xl lg:text-5xl text-gold-light transition-colors duration-300 group-hover:text-primary">
-                Asma-ul-Husna
+                Bayt-Ul-Husna
               </h1>
               <p className="text-sm text-muted-foreground mt-1 font-arabic tracking-wide">
-                The 99 Beautiful Names of Allah
+                The 33 Beautiful Names of Allah
               </p>
             </Link>
           </motion.div>
@@ -34,7 +34,7 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="flex items-center gap-8"
+            className="flex items-center gap-6 md:gap-8"
           >
             <Link
               to="/"
@@ -56,7 +56,18 @@ const Header = () => {
               }`}
             >
               <MessageCircle size={18} />
-              <span className="font-arabic">Ask AI</span>
+              <span className="font-arabic">Ask Questions</span>
+            </Link>
+            <Link
+              to="/team"
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+                location.pathname === "/team"
+                  ? "text-primary bg-primary/10"
+                  : "text-foreground hover:text-primary hover:bg-primary/5"
+              }`}
+            >
+              <Users size={18} />
+              <span className="font-arabic">Our Team</span>
             </Link>
           </motion.nav>
         </div>
