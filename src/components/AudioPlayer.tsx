@@ -13,6 +13,16 @@ import recording19 from "@/assets/audio/recording-19.m4a";
 import recording20 from "@/assets/audio/recording-20.m4a";
 import recording21 from "@/assets/audio/recording-21.m4a";
 import recording22 from "@/assets/audio/recording-22.m4a";
+import recording23 from "@/assets/audio/recording-23.m4a";
+import recording24 from "@/assets/audio/recording-24.m4a";
+import recording25 from "@/assets/audio/recording-25.m4a";
+import recording26 from "@/assets/audio/recording-26.m4a";
+import recording27 from "@/assets/audio/recording-27.m4a";
+import recording28 from "@/assets/audio/recording-28.m4a";
+import recording29 from "@/assets/audio/recording-29.m4a";
+import recording30 from "@/assets/audio/recording-30.m4a";
+import recording31 from "@/assets/audio/recording-31.m4a";
+import recording32 from "@/assets/audio/recording-32.m4a";
 
 // Mapping: name number -> recording file (13=34, 14=35, etc.)
 const audioMap: Record<number, string> = {
@@ -26,6 +36,16 @@ const audioMap: Record<number, string> = {
   41: recording20,
   42: recording21,
   43: recording22,
+  44: recording23,
+  45: recording24,
+  46: recording25,
+  47: recording26,
+  48: recording27,
+  49: recording28,
+  50: recording29,
+  51: recording30,
+  52: recording31,
+  53: recording32,
 };
 
 interface AudioPlayerProps {
