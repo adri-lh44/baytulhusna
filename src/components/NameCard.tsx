@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
+import AudioPlayer from "@/components/AudioPlayer";
 
 interface NameCardProps {
   id: string;
   name: string;
+  arabic: string;
   meaning: string;
   onClick: () => void;
   index: number;
 }
 
-const NameCard = ({ id, name, meaning, onClick, index }: NameCardProps) => {
+const NameCard = ({ id, name, arabic, meaning, onClick, index }: NameCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -38,12 +40,28 @@ const NameCard = ({ id, name, meaning, onClick, index }: NameCardProps) => {
           <span className="text-xs font-medium text-primary">{id}</span>
         </div>
 
+        {/* Audio player - stop propagation to prevent modal opening */}
+        <div 
+          className="absolute top-3 left-3 z-20"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <AudioPlayer arabicText={arabic} name={name} size="sm" />
+        </div>
+
         {/* Content */}
-        <div className="relative z-10">
-          <h3 className="font-amiri text-xl md:text-2xl text-gold-light group-hover:text-primary transition-colors duration-300 mb-2">
+        <div className="relative z-10 pt-6">
+          {/* Arabic Name - prominent display */}
+          <p 
+            className="font-amiri text-2xl md:text-3xl text-primary mb-2 text-center"
+            style={{ direction: "rtl" }}
+          >
+            {arabic}
+          </p>
+          
+          <h3 className="font-amiri text-lg md:text-xl text-gold-light group-hover:text-primary transition-colors duration-300 mb-1 text-center">
             {name}
           </h3>
-          <p className="text-sm text-muted-foreground font-arabic leading-relaxed">
+          <p className="text-sm text-muted-foreground font-arabic leading-relaxed text-center">
             {meaning}
           </p>
         </div>
