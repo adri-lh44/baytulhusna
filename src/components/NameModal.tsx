@@ -51,7 +51,7 @@ const NameModal = ({ isOpen, onClose, nameData, nameId }: NameModalProps) => {
             
             {/* Audio Player */}
             <div className="flex justify-center mb-3">
-              <AudioPlayer arabicText={nameData.arabic} name={nameData.name} size="lg" />
+              <AudioPlayer nameNumber={parseInt(nameId)} size="lg" />
             </div>
             
             <DialogTitle className="font-amiri text-2xl md:text-3xl text-gold-light">

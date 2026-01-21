@@ -45,7 +45,7 @@ const NameCard = ({ id, name, arabic, meaning, onClick, index }: NameCardProps) 
           className="absolute top-3 left-3 z-20"
           onClick={(e) => e.stopPropagation()}
         >
-          <AudioPlayer arabicText={arabic} name={name} size="sm" />
+          <AudioPlayer nameNumber={parseInt(id)} size="sm" />
         </div>
 
         {/* Content */}
