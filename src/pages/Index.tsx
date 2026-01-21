@@ -116,6 +116,7 @@ const Index = () => {
               key={id}
               id={id}
               name={data.name}
+              arabic={data.arabic}
               meaning={data.meaning}
               onClick={() => setSelectedName(id)}
               index={index}

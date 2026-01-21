@@ -1,9 +1,11 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { BookOpen, Sparkles, Quote } from "lucide-react";
+import AudioPlayer from "@/components/AudioPlayer";
 
 interface NameData {
   name: string;
+  arabic: string;
   meaning: string;
   verse: string;
   description: string;
@@ -26,16 +28,36 @@ const NameModal = ({ isOpen, onClose, nameData, nameId }: NameModalProps) => {
         <div className="relative bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 p-8">
           <div className="absolute inset-0 islamic-pattern opacity-30" />
           
+          {/* Ambient light effect */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-primary/20 rounded-full blur-3xl" />
+          
           <DialogHeader className="relative z-10 text-center">
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
                 <span className="font-amiri text-2xl text-primary">{nameId}</span>
               </div>
             </div>
-            <DialogTitle className="font-amiri text-3xl md:text-4xl text-gold-light">
+            
+            {/* Arabic Name - Large and prominent */}
+            <motion.p
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1 }}
+              className="font-amiri text-4xl md:text-5xl text-primary mb-3"
+              style={{ direction: "rtl" }}
+            >
+              {nameData.arabic}
+            </motion.p>
+            
+            {/* Audio Player */}
+            <div className="flex justify-center mb-3">
+              <AudioPlayer arabicText={nameData.arabic} name={nameData.name} size="lg" />
+            </div>
+            
+            <DialogTitle className="font-amiri text-2xl md:text-3xl text-gold-light">
               {nameData.name}
             </DialogTitle>
-            <p className="text-lg text-primary mt-2 font-arabic">{nameData.meaning}</p>
+            <p className="text-lg text-primary/80 mt-2 font-arabic">{nameData.meaning}</p>
           </DialogHeader>
         </div>
 
